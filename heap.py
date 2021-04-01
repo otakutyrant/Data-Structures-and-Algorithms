@@ -75,17 +75,3 @@ def heapsort(numbers: List[int]) -> List[int]:
     for index in range(len(numbers)):
         numbers[index:] = Heap(numbers[index:])._heap
     return numbers
-
-def lastStoneWeight(stones: List[int]) -> int:
-    stones = Heap(stones)
-    while stones.length > 1:
-        print(stones._heap)
-        debris = stones.pop() - stones.pop()
-        if debris != 0:
-            stones.push(debris)
-    if stones.length == 1:
-        return stones.pop()
-    else:
-        return 0
-
-print(lastStoneWeight([2,7,4,1,8,1]))
